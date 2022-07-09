@@ -1,0 +1,30 @@
+<div>
+  <h1>Login Page</h1>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-cont">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your Email</mat-label>
+        <input matInput ngModel name="email" type="email" id="email" placeholder="pat@example.com">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput ngModel name="password" id="password" placeholder="pat@example.com">
+        <mat-icon matSuffix>password</mat-icon>
+      </mat-form-field>
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+
+    </div>
+  </form>
+
+  <div *ngIf="error">
+    {{error}}
+  </div>
+
+</div>

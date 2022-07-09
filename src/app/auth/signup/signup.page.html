@@ -1,0 +1,27 @@
+<div>
+  <h1>Signup Page</h1>
+  <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstname">Firstname</label>
+      <input type="text" ngModel name="firstname" id="firstname">
+    </div>
+    <div>
+      <label for="lastname" class="form-label">Lastname</label>
+      <input type="text" ngModel name="lastname" id="lastname">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" ngModel name="email" id="email">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" ngModel name="password" id="password">
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+  <div *ngIf="error">
+    {{error}}
+  </div>
+</div>
