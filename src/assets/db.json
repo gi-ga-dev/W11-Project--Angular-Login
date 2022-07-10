@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "email": "example@gmail.com",
+      "password": "$2a$10$bQyHXD9j5zUh3QJ1cRaSm.Go3Tj0r6ynwxKJE/Zv99B2y.c5AT.d.",
+      "firstname": "Gianluca",
+      "lastname": "Gallone",
+      "id": 1
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "$2a$10$K.Az4qvUJIAvqRMQSCTdGuzgpGzwcCS97ZCMwrNYXZne3vd.md99S",
+      "firstname": "Morena",
+      "lastname": "Ruggiero",
+      "id": 2
+    },
+    {
+      "email": "xyz@gmail.com",
+      "password": "$2a$10$K7Lt9eHaY.1hx3txiYmz2uBEJM/GwwdbEqZEGD7Uwx.XeX2CdL61q",
+      "firstname": "Gianluca",
+      "lastname": "Gallone",
+      "id": 3
+    },
+    {
+      "email": "qwerty@gmail.com",
+      "password": "$2a$10$9Oc1UrugsiVfyH6TYW3yPOOIEPUwt13y9.Q0rg9YdO9DgHuNhZ7Wa",
+      "firstname": "Gianluca",
+      "lastname": "Gallone",
+      "id": 4
+    },
+    {
+      "email": "cazz@gmail.com",
+      "password": "$2a$10$fZjqWIPO50oZ.nqPkAVyw.98zYToaLjG86TwjiImMJYEybbi9NtE2",
+      "firstname": "giga",
+      "lastname": "dev",
+      "id": 5
+    },
+    {
+      "email": "pdpm@gmail.com",
+      "password": "$2a$10$xj8OxYZnnX9qO4oi8pjjoeFTxrFW5smG25jXtrtOyHZpW.Z0qHgam",
+      "firstname": "pd",
+      "lastname": "pm",
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "title": "Puffer Pastry",
+      "author": "Morena Ruggiero",
+      "id": 1
+    }
+  ]
+}

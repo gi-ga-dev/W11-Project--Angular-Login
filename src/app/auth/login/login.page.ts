@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
@@ -11,6 +11,7 @@ export class LoginPage implements OnInit {
 
   @ViewChild('f') form!: NgForm;
   error = undefined;
+  hide = true;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -32,6 +33,7 @@ export class LoginPage implements OnInit {
         this.error = err.error;
       }
     )
+
   }
 
 }

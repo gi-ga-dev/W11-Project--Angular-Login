@@ -1,11 +1,11 @@
-<mat-sidenav-container class="navbar-cont">
+<mat-toolbar color="primary" class="navbar-cont">
 
-  <mat-sidenav-content class="nav-title">
-    <a mat-button id="raised" [routerLink]="['/home']" routerLinkActive="router-link-active">{{myname}}</a>
-  </mat-sidenav-content>
-
-  <mat-sidenav-content class="nav-cont">
+  <mat-toolbar-row>
     <app-nav></app-nav>
-  </mat-sidenav-content>
+  </mat-toolbar-row>
 
-</mat-sidenav-container>
+  <mat-toolbar-row class="nav-title">
+    <a mat-button>{{myname}}</a>
+  </mat-toolbar-row>
+
+</mat-toolbar>

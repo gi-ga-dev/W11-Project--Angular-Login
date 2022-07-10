@@ -1,8 +1,28 @@
-<h1>Profile Page</h1>
-<ul>
-    <li> {{userName}} </li>
-    <li> {{userSurname}} </li>
-    <li> {{userEmail}} </li>
-</ul>
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image">
+            <mat-icon>fingerprint</mat-icon>
+        </div>
+        <mat-card-title>Profile Page</mat-card-title>
+        <mat-card-subtitle>{{userName}} {{userSurname}} {{userEmail}} {{error}} </mat-card-subtitle>
+    </mat-card-header>
 
-{{error}}
+    <img mat-card-image src="assets/img/profile-img.png" alt="Photo profile">
+
+    <mat-card-content>
+        <p>
+            <b>Bio:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita quibusdam veritatis
+            recusandae,
+            iure eligendi eius laudantium illo odit. Necessitatibus maiores facere, labore ducimus amet delectus alias
+            architecto eos adipisci.
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>
+            <mat-icon>thumb_up</mat-icon> Like
+        </button>
+        <button mat-button>
+            <mat-icon>share</mat-icon> Share
+        </button>
+    </mat-card-actions>
+</mat-card>

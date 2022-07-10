@@ -35,6 +35,11 @@ const routes: Routes = [
     loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
   },
   {
+    path: 'posts',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./err404/err404.module').then(m => m.Err404Module)
   }

@@ -9,10 +9,10 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(public breakpointObserver: BreakpointObserver) { }
+  constructor(/* public breakpointObserver: BreakpointObserver */) { }
 
   ngOnInit() {
-    this.breakpointObserver.observe([
+    /* this.breakpointObserver.observe([
       Breakpoints.XSmall,
       Breakpoints.Small,
       Breakpoints.Medium,
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
 
         console.log('Matches XLarge viewport');
       }
-    });
+    }); */
   }
 
 }

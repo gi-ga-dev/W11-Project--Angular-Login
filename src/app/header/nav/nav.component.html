@@ -1,20 +1,29 @@
-<div class="nav-cont">
-  <a mat-button id="raised" href="#" [routerLink]="['/home']" routerLinkActive="router-link-active">
-    <mat-icon>home</mat-icon> Home
-  </a>
-  <a mat-button id="raised" href="#" [routerLink]="['/users']" routerLinkActive="router-link-active">
-    <mat-icon>account_box</mat-icon> Profile
-  </a>
-  <a mat-button id="raised" href="#" [routerLink]="['/contact']" routerLinkActive="router-link-active">
-    <mat-icon>question_answer</mat-icon> Contact
-  </a>
-  <a mat-button id="raised" type="button" [routerLink]="['/login']" routerLinkActive="router-link-active">
-    <mat-icon>login</mat-icon> Login
-  </a>
-  <button mat-button id="raised" type="button" (click)="logout()">
-    <mat-icon>logout</mat-icon> Logout
-  </button>
-  <a mat-button id="raised" type="button" [routerLink]="['/signup']" routerLinkActive="router-link-active">
-    <mat-icon>lock_open</mat-icon> Register
-  </a>
-</div>
+<!-- <a mat-button id="raised" [routerLink]="['/home']" routerLinkActive="router-link-active" class="logo-cont">
+  <img src="assets/img/angular-logo.png" id="img-logo">
+</a> -->
+<a mat-button id="raised" href="#" [routerLink]="['/home']" routerLinkActive="router-link-active">
+  <mat-icon>home</mat-icon> Home
+</a>
+<a mat-button id="raised" href="#" [routerLink]="['/users']" routerLinkActive="router-link-active">
+  <mat-icon>account_box</mat-icon> Profile
+</a>
+<a mat-button id="raised" href="#" [routerLink]="['/contact']" routerLinkActive="router-link-active">
+  <mat-icon>question_answer</mat-icon> User List
+</a>
+<a mat-button id="raised" type="button" [routerLink]="['/posts']" routerLinkActive="router-link-active">
+  <mat-icon>storage</mat-icon> Posts
+</a>
+
+<a mat-button id="raised" type="button" *ngIf="showSignUp" [routerLink]="['/signup']"
+  routerLinkActive="router-link-active">
+  <mat-icon>lock_open</mat-icon> Register
+</a>
+
+<a mat-button id="raised" type="button" *ngIf="showLogin" [routerLink]="['/login']"
+  routerLinkActive="router-link-active">
+  <mat-icon>login</mat-icon> Login
+</a>
+
+<button mat-button id="raised" type="button" *ngIf="showLogout" (click)="logout()">
+  <mat-icon>logout</mat-icon> Logout
+</button>

@@ -4,6 +4,11 @@ import { CommonModule } from '@angular/common';
 import { UsersPage } from './users/users.page';
 import { RouterModule, Routes } from '@angular/router';
 
+/* -------------- Material --------------- */
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 const routes: Routes = [
   {
     path: '',
@@ -18,7 +23,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class UsersModule { }

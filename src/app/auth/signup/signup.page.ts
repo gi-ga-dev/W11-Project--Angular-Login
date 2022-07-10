@@ -11,6 +11,7 @@ export class SignupPage implements OnInit {
 
   @ViewChild('f') form!: NgForm;
   error = undefined;
+  hide = true;
 
   constructor(
     private authService: AuthService,
@@ -20,14 +21,13 @@ export class SignupPage implements OnInit {
   }
 
   onSubmit() {
-    //console.log(this.form.value)
     this.authService.signup(this.form.value).subscribe(
       resp => {
         console.log(resp);
         this.error = undefined;
         this.router.navigate(['/login'])
       },
-      err  => {
+      err => {
         console.log(err.error);
         this.error = err.error;
       }

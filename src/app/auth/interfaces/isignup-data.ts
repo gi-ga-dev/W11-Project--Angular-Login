@@ -1,6 +1,7 @@
 export interface ISignupData {
+  "email"?: string,
   "firstname"?: string,
   "lastname"?: string,
-  "email": string,
-  "password": string,
+  "id"?: number,
+  "password"?: string
 }

@@ -8,14 +8,14 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  myname = 'My First Angular Project'
+  myname = 'My First Angular Project!'
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.authSubject.subscribe(val => {
       if (val !== null) {
-        this.myname = `Ciao ${val?.user.firstname} ${val?.user.lastname}, benvenuto su ${this.myname}`;
+        this.myname = `Hi ${val?.user.firstname} ${val?.user.lastname}, Welcome to ${this.myname}`;
       } else {
         this.myname = 'My First Angular Project';
       }

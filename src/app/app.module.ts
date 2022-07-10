@@ -7,8 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { HeaderModule } from './header/header.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { LayoutModule } from '@angular/cdk/layout';
+import { PostsRoutingModule } from './posts/posts-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +20,13 @@ import { LayoutModule } from '@angular/cdk/layout';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     HeaderModule,
     HomeModule,
     AuthModule,
-    LayoutModule
-
+    LayoutModule,
+    PostsRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { IAuthData } from './../../auth/interfaces/iauth-data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import { ISignupData } from 'src/app/auth/interfaces/isignup-data';
 
 @Component({
   templateUrl: './users.page.html',
@@ -9,8 +10,10 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class UsersPage implements OnInit {
 
-  users: IAuthData[] = [];
+  users: ISignupData[] = [];
   error = undefined;
+
+  /* dati dell'account corrente */
   userName!: string | undefined;
   userSurname!: string | undefined;
   userEmail!: string | undefined;
@@ -21,6 +24,7 @@ export class UsersPage implements OnInit {
     this.getAllUsers();
   }
 
+  /* chiamata ajax, dati presi dal service */
   getAllUsers() {
     console.log('Chiamata Ajax al server')
     this.authService.authSubject.subscribe(userLogin => {
@@ -28,18 +32,17 @@ export class UsersPage implements OnInit {
       this.userName = userLogin?.user.firstname;
       this.userSurname = userLogin?.user.lastname;
       this.userEmail = userLogin?.user.email;
-      console.log(this.userEmail);
+      console.log(userLogin?.user.email, userLogin?.user);
 
-      this.http.get<IAuthData[]>('http://localhost:4201/users', {
+      this.http.get<ISignupData[]>('http://localhost:4201/users', {
         headers: new HttpHeaders({ "Authorization": "Bearer " + userLogin?.accessToken })
       })
         .subscribe(
           resp => {
-            console.log(resp)
             this.users = resp;
+            console.log(this.users);
           },
           err => {
-            console.log(err)
             this.error = err.error
           }
         )
