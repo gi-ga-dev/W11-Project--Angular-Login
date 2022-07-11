@@ -24,6 +24,17 @@ input.example-right-align {
     margin: 10px auto;
 }
 
+.posts-cont2 {
+    margin-top: 10px;
+}
+
 .mat-form-field+.mat-form-field {
     margin-left: 8px;
+}
+
+.posts-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
