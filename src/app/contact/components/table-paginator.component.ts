@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -10,21 +10,23 @@ import { ISignupData } from 'src/app/auth/interfaces/isignup-data';
   templateUrl: './table-paginator.component.html',
   styleUrls: ['./table-paginator.component.scss']
 })
-export class TablePaginatorComponent implements AfterViewInit {
+export class TablePaginatorComponent implements OnInit, AfterViewInit {
 
   users: ISignupData[] = [];
   error = undefined;
 
+  USERS_DATA = this.users;
+
   displayedColumns: string[] = ['id', 'firstname', 'lastname', 'email'];
-  dataSource = new MatTableDataSource<ISignupData>(USERS_DATA);
+  dataSource = new MatTableDataSource<any>(USERS_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private authService: AuthService, private http: HttpClient) { }
 
   ngOnInit(): void {
+    /* all'avvio prende i dati e li inserisce dentro users */
     this.getAllUsers();
-    console.log(this.dataSource);
   }
 
   ngAfterViewInit() {
@@ -41,6 +43,7 @@ export class TablePaginatorComponent implements AfterViewInit {
         .subscribe(
           resp => {
             this.users = resp;
+
             console.log(this.users);
           },
           err => {

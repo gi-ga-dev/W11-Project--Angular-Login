@@ -13,9 +13,9 @@ import { ISignupData } from '../auth/interfaces/isignup-data';
 })
 export class PostsComponent implements OnInit {
 
-  posts: IPostsData[] = [];
-
   @ViewChild('f') form!: NgForm;
+  posts: IPostsData[] = [];
+  hide = true;
   error = undefined;
 
   constructor(

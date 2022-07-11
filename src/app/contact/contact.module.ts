@@ -8,19 +8,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TablePaginatorComponent } from './components/table-paginator.component';
+import { ExpPanelComponent } from './components/exp-panel.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
   declarations: [
     ContactPage,
-    TablePaginatorComponent
+    TablePaginatorComponent,
+    ExpPanelComponent
   ],
   imports: [
     CommonModule,
     ContactRoutingModule,
     HttpClientModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatExpansionModule
   ]
 })
 export class ContactModule { }

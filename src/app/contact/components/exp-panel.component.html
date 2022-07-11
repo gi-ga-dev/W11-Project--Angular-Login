@@ -1,0 +1,13 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let user of users" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{user.firstname}} {{user.lastname}}
+            </mat-panel-title>
+            <mat-panel-description>
+                Click to see full details...
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        Id: {{user.id}} - Name: {{user.lastname}} - Surname: {{user.firstname}} - Email: {{user.email}}
+    </mat-expansion-panel>
+</mat-accordion>
