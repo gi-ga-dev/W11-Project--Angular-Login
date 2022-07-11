@@ -17,6 +17,7 @@ export class PostsComponent implements OnInit {
   posts: IPostsData[] = [];
   hide = true;
   error = undefined;
+  panelOpenState = false;
 
   constructor(
     private authService: AuthService,
@@ -24,19 +25,22 @@ export class PostsComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-  ngOnInit(): void { this.getAllPosts(); }
+  ngOnInit(): void {
+    this.getAllPosts();
+  }
 
   /* ---- Post nel db.json ---- */
   onSubmit() {
     this.authService.createPosts(this.form.value).subscribe(
       resp => {
         this.error = undefined;
-        this.router.navigate(['/posts'])
+        this.router.navigate(['/posts']);
       },
       err => {
         this.error = err.error;
       }
     )
+    this.getAllPosts();
   }
 
   /* ---- Get dal db.json ---- */

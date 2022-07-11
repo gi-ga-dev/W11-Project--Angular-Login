@@ -21,7 +21,9 @@ input.example-right-align {
 
 .example-card {
     max-width: 400px;
-    padding: 50px;
-    margin: auto;
-    margin-top: 10px;
+    margin: 10px auto;
+}
+
+.mat-form-field+.mat-form-field {
+    margin-left: 8px;
 }

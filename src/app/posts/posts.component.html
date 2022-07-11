@@ -1,9 +1,55 @@
-<form #f="ngForm" (ngSubmit)="onSubmit()">
+<!-- <div>
+    <h1>Posts Page</h1>
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
 
+        <div>
+            <label for="author">Author</label>
+            <input type="text" ngModel name="author" id="author">
+        </div>
+
+        <div>
+            <label for="title">Title</label>
+            <input type="text" ngModel name="title" id="title">
+        </div>
+
+        <div>
+            <label for="title">Description</label>
+            <input type="text" ngModel name="description" id="description">
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+    <div *ngIf="error">
+        {{error}}
+    </div>
+</div> -->
+
+<!-- ------------------------------------------------ -->
+
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let post of posts" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Author: {{post.author}}
+            </mat-panel-title>
+            <mat-panel-description>
+                Click to see posts details...
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        Post Id: {{post.id}} - Title: {{post.title}} - Description: {{post.description}}
+    </mat-expansion-panel>
+</mat-accordion>
+
+<!-- ------------------------------------------------ -->
+
+<form #f="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-cont">
         <mat-card class="example-card">
 
-            <mat-card-title>Posts Page</mat-card-title>
+            <mat-card-title>Post Section</mat-card-title>
             <mat-card-subtitle>Create a post</mat-card-subtitle>
 
             <mat-card-content>
@@ -12,7 +58,7 @@
                         <mat-label>Insert post's author</mat-label>
                         <input matInput ngModel type="text" name="author" id="author"
                             placeholder="Insert post's author">
-                        <mat-icon matSuffix>email</mat-icon>
+                        <mat-icon matSuffix>portrait</mat-icon>
                     </mat-form-field>
                 </div>
             </mat-card-content>
@@ -23,8 +69,19 @@
                 <div class="example-container">
                     <mat-form-field appearance="fill">
                         <mat-label>Insert a post</mat-label>
-                        <input matInput ngModel type="text" name="title" id="title" placeholder="Insert a post">
-                        <mat-icon matSuffix>email</mat-icon>
+                        <input matInput ngModel type="text" name="title" id="title" placeholder="Insert title">
+                        <mat-icon matSuffix>book</mat-icon>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+
+            <mat-card-content>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Insert description</mat-label>
+                        <input matInput ngModel type="text" name="description" id="description"
+                            placeholder="Insert description">
+                        <mat-icon matSuffix>library_books</mat-icon>
                     </mat-form-field>
                 </div>
             </mat-card-content>
@@ -40,5 +97,3 @@
         </mat-card>
     </div>
 </form>
-
-<p *ngFor="let post of posts">{{post.title}}</p>

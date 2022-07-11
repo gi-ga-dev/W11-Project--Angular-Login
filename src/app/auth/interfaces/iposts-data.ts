@@ -1,4 +1,6 @@
 export interface IPostsData {
-    "title": string,
+    "id": number,
     "author": string
+    "title": string,
+    "description": string
 }
